@@ -22,6 +22,7 @@ class Sinatra::Base
     Zip.ensure_index(:code)
     Zip.ensure_index(:city)
     Zip.ensure_index(:state)
+    MongoMapper.connect('production')
   end
   
   use Rack::ShowExceptions if development?
