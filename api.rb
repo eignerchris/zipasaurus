@@ -14,7 +14,7 @@ class Api < Sinatra::Base
   # @param [String] state - 2 character state code
   # @return [Array] array of json objects containing city, state, lat, lng, etc.
   get '/states/:state' do
-    zs = Zip.where(:state => params[:state].to_s.upcase).all
+    zs = Zip.all(:state => params[:state].to_s.upcase)
     zs.to_json
   end
 
@@ -24,7 +24,7 @@ class Api < Sinatra::Base
   # @param [String] city - city name
   # @return [Array] array of json objects containing city, state, lat, lng, etc.
   get '/states/:state/cities/:city' do
-    zs = Zip.where(:state => params[:state].to_s.upcase, :city => params[:city].to_s.upcase).all
+    zs = Zip.all(:state => params[:state].to_s.upcase, :city => params[:city].to_s.upcase)
     zs.to_json
   end
 
@@ -32,4 +32,4 @@ class Api < Sinatra::Base
   #     zs = Zip.where(:city => params[:city].to_s.upcase).all
   #     zs.to_json
   #   end
-end
+en
