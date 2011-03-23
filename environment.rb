@@ -19,10 +19,10 @@ class Sinatra::Base
 
   configure :production do
     MongoMapper.config = {'production' => {'uri' => ENV['MONGOHQ_URL']}}
-    MongoMapper.connect('production')
-    Zip.ensure_index(:code)
-    Zip.ensure_index(:city)
-    Zip.ensure_index(:state)
+    MongoMapper.connect 'production' 
+    Zip.ensure_index :code 
+    Zip.ensure_index :city 
+    Zip.ensure_index :state 
   end
   
   use Rack::ShowExceptions if development?
