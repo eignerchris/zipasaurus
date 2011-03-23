@@ -8,18 +8,26 @@ class Controller < Sinatra::Base
     erb :'perf_and_tech'
   end
   
+  ### API ###
+  
   get '/zips/:code' do
-    z = Zip.all(:code => params[:code]).first
+    z = Zip.where(:code => params[:code]).first
     z.to_json
   end
   
-  get '/cities/:city' do
-    zs = Zip.all(:city => params[:city].to_s.upcase)
+  get '/states/:state' do
+    zs = Zip.where(:state => params[:state].to_s.upcase).all
     zs.to_json
   end
   
-  get '/states/:state' do
-    zs = Zip.all(:state => params[:state].to_s.upcase)
+  get '/states/:state/cities/:city' do
+    zs = Zip.where(:state => params[:state].to_s.upcase, :city => params[:city].to_s.upcase).all
     zs.to_json
   end
+  
+  get '/cities/:city' do
+     zs = Zip.where(:city => params[:city].to_s.upcase).all
+     zs.to_json
+   end
+   
 end
