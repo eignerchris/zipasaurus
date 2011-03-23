@@ -1,0 +1,25 @@
+body {
+  font-family: Helvetica;
+  min-width: 500px;
+  min-height: 500px;
+}
+
+#headline {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}
+
+footer p {
+  font-size: 12px;
+}
+
+#app-wrapper {
+  text-align: left;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 700px;
+}
