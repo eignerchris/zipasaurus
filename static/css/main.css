@@ -1,10 +1,17 @@
+html {
+  width: 100%;
+  height: 100%;
+  background: -moz-radial-gradient(center 45deg, circle closest-corner, #fff 0%, #ddd 100%);
+  background: -webkit-gradient(radial, center center, 0, center center, 500, from(#fff), to(#ddd));
+}
+
 body {
-  font-family: Helvetica;
+  font-family: Times;
   min-width: 500px;
   min-height: 500px;
 }
 
-#headline {
+header {
   text-align: center;
 }
 

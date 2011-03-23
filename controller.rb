@@ -4,6 +4,10 @@ class Controller < Sinatra::Base
     erb :index
   end
 
+  get '/perf-and-tech' do
+    erb :'perf_and_tech'
+  end
+  
   get '/zips/:code' do
     z = Zip.all(:code => params[:code]).first
     z.to_json
