@@ -1,11 +1,38 @@
 <div id="perf-and-tech-wrapper">
 	<div id="technicals">
 		<h3>Technical Details</h3>
-		<p>zipasaur.us is built on <a href="http://www.sinatrarb.com/">Sinatra</a>, a minimalist web development framework. Backend is mongodb with John Nunemaker's <a href="https://github.com/jnunemaker/mongomapper">mongomapper</a>gem for an ORM. For quick scaling and ease of deployment, zipasaur.us is deployed on <a href="http://heroku.com">Heroku</a>, using <a href="http://mongohq.com">MongoHQ</a> for hosting the mongo database. </p>
+		<p>zipasaur.us is built on <a href="http://www.sinatrarb.com/">Sinatra</a>, a minimalist web development framework. Backend is mongodb with John Nunemaker's <a href="https://github.com/jnunemaker/mongomapper">mongomapper</a> gem for an ORM. For quick scaling and ease of deployment, zipasaur.us is deployed on <a href="http://heroku.com">Heroku</a>, using <a href="http://mongohq.com">MongoHQ</a> for hosting the mongo database. The database consists of approximately 42k zip info documents, each containing zip, city, state, county, lat, and lng keys. The service currently only returns JSON responses.</p>
 	</div>
 	
 	<div id="performance">
 		<h3>Performance</h3>
-		<p>TODO: show some ab stats and response times here</p>
+		<pre>$ ab -n 1000 -c 50 http://zipasaur.us/zips/97209
+Server Software:        nginx/0.7.67
+Server Hostname:        zipasaur.us
+Server Port:            80
+
+Document Path:          /zips/97209
+Document Length:        18 bytes
+
+Concurrency Level:      50
+Time taken for tests:   5.215 seconds
+Complete requests:      1000
+Failed requests:        0
+Write errors:           0
+Non-2xx responses:      1000
+Total transferred:      381613 bytes
+HTML transferred:       18000 bytes
+Requests per second:    191.75 [#/sec] (mean)
+Time per request:       260.759 [ms] (mean)
+Time per request:       5.215 [ms] (mean, across all concurrent requests)
+Transfer rate:          71.46 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:      103  116   8.4    114     155
+Processing:   109  139  26.6    131     284
+Waiting:      109  139  26.5    130     283
+Total:        219  255  28.5    247     410
+		</pre>
 	</div>
 </div>

@@ -7,8 +7,18 @@ html {
 
 body {
   font-family: Times;
-  min-width: 500px;
-  min-height: 500px;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+pre {
+  border: 1px solid #bbb;
+  background-color: white;
+  overflow: auto;
+  height: auto;
+  font-size: 20px;
+  line-height: 35px;
+  padding-left: 10px;
 }
 
 header {
@@ -25,8 +35,8 @@ footer p {
 
 #app-wrapper {
   text-align: left;
-  width: 700px;
+  width: 70%;
   margin-left: auto;
   margin-right: auto;
-  height: 700px;
+  height: 70%;
 }

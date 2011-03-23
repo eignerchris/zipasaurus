@@ -1,20 +1,20 @@
 <div id="intro">
-	<p>Welcome to zipasaur.us, a dead-simple API for retrieving information about a given city, state, or zip in a speedy manner. Documentation <a href="docs">here</a>. If you are curious about performance or technical/implementation details, have a look <a href="perf-and-tech">here</a>.</p>
+	<p>Welcome to zipasaur.us, a dead-simple API for retrieving information about a given city, state, or zip in a speedy manner. Documentation <a href="Api.html">here</a>. If you are curious about performance or technical/implementation details, have a look <a href="perf-and-tech">here</a>.</p>
 </div>
 
 <div id="getting-started">
 	<h3>Getting Started</h3>
-	<p>Getting started is simple - query zipasaur.us using anything that speaks HTTP!</p>
 	
-	<p>To fetch zip info for a given postal code, query the zips resource like so...</p>
-	<pre>curl http://zipasaur.us/zips/97209</pre>
+	<p>To fetch info for a given zip code...</p>
+	<pre>curl http://zipasaur.us/api/zips/97209</pre>
 	
-	<p>returns</p>
-	<pre>{"city":"PORTLAND","code":"97209","lng":"-122.683826","county":"MULTNOMAH","lat":"+45.531990","state":"OR"}</pre>
+	<p>To fetch info for all of Oregon...</p>
+	<pre>curl http://zipasaur.us/api/states/or</pre>
 	
-	<p>To fetch all the zip code info for Oregon, query the states resource like so...</p>
-	<pre>curl http://zipasaur.us/states/or</pre>
+	<p>To fetch info for Portland, Oregon...</p>
+	<pre>curl http://zipasaur.us/api/states/or/cities/portland</pre>
 	
-	<p>To fetch all zip info for all cities named Portland, query the cities resource like so...</p>
-	<pre>curl http://zipasaur.us/cities/portland</p>
+	<h3>Structure</h3>
+	<p>All zip code documents look like the following...</p>
+	<pre> => {"city":"PORTLAND","code":"97209","lng":"-122.683826","county":"MULTNOMAH","lat":"+45.531990","state":"OR"}</pre>
 </div>
