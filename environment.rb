@@ -5,7 +5,8 @@ Bundler.require :default
 require 'pp'
 
 require File.join(File.expand_path(File.dirname(__FILE__)), 'controller.rb')
-require File.join(File.expand_path(File.dirname(__FILE__)), 'helpers.rb')
+require File.join(File.expand_path(File.dirname(__FILE__)), 'api.rb')
+
 Dir.glob(['lib', 'models'].map! {|d| File.join File.expand_path(File.dirname(__FILE__)), d, '*.rb'}).each {|f| require f}
 
 puts "Starting in #{Sinatra::Base.environment} mode.."
@@ -35,6 +36,5 @@ class Sinatra::Base
   set :root, File.expand_path(File.dirname(__FILE__))
   set :public, File.join(root, 'static')
   set :dump_errors, true
-  helpers Helpers
   register Sinatra::Namespace
 end
