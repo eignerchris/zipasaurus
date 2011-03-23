@@ -32,4 +32,4 @@ class Api < Sinatra::Base
   #     zs = Zip.where(:city => params[:city].to_s.upcase).all
   #     zs.to_json
   #   end
-en
+end
