@@ -4,15 +4,15 @@
   <head>
     <meta name="Content-Type" content="text/html; charset=utf-8" />
 <title>Class: Api</title>
-<link rel="stylesheet" href="/css/doc/style.css" type="text/css" media="screen" charset="utf-8" />
-<link rel="stylesheet" href="css/doc/common.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
 
 <script type="text/javascript" charset="utf-8">
   relpath = '';
   if (relpath != '') relpath += '/';
 </script>
-<script type="text/javascript" charset="utf-8" src="/js/doc/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="/js/doc/app.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/app.js"></script>
 
   </head>
   <body>
@@ -30,6 +30,12 @@
   
   
   <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  <a id="class_list_link" href="#">Class List</a>
+  <a id="method_list_link" href="#">Method List</a>
+  <a id ="file_list_link" href="#">File List</a>
 </div>
 
       <div class="clear"></div>
@@ -90,7 +96,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#GET___states__state_-instance_route" title="#GET '/states/:state' (instance route)">- (Array) <strong>GET '/states/:state'</strong> </a>
+      <a href="#GET___bystate__state_-instance_route" title="#GET '/bystate/:state' (instance route)">- (Array) <strong>GET '/bystate/:state'</strong> </a>
     
 
     
@@ -113,7 +119,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#GET___states__state_cities__city_-instance_route" title="#GET '/states/:state/cities/:city' (instance route)">- (Array) <strong>GET '/states/:state/cities/:city'</strong> </a>
+      <a href="#GET___bystate__state_bycity__city_-instance_route" title="#GET '/bystate/:state/bycity/:city' (instance route)">- (Array) <strong>GET '/bystate/:state/bycity/:city'</strong> </a>
     
 
     
@@ -136,7 +142,30 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#GET___zips__code_-instance_route" title="#GET '/zips/:code' (instance route)">- (String) <strong>GET '/zips/:code'</strong> </a>
+      <a href="#GET___bystate__state_bycity__city_bycounty__county_-instance_route" title="#GET '/bystate/:state/bycity/:city/bycounty/:county' (instance route)">- (Array) <strong>GET '/bystate/:state/bycity/:city/bycounty/:county'</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Zip info for a given state/city/county combo.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#GET___byzip__code_-instance_route" title="#GET '/byzip/:code' (instance route)">- (String) <strong>GET '/byzip/:code'</strong> </a>
     
 
     
@@ -167,9 +196,9 @@
     
     
       <div class="method_details first">
-  <p class="signature first" id="GET___states__state_-instance_route">
+  <p class="signature first" id="GET___bystate__state_-instance_route">
   
-    - (<tt>Array</tt>) <strong>GET '/states/:state'</strong> 
+    - (<tt>Array</tt>) <strong>GET '/bystate/:state'</strong> 
   
 
   
@@ -236,8 +265,8 @@
     <td>
       <pre class="code"><span class="info file"># File 'api.rb', line 16</span>
 
-<span class='get identifier id'>get</span> <span class='string val'>'/states/:state'</span> <span class='do do kw'>do</span>
-  <span class='zs identifier id'>zs</span> <span class='assign token'>=</span> <span class='Zip constant id'>Zip</span><span class='dot token'>.</span><span class='where identifier id'>where</span><span class='lparen token'>(</span><span class='symbol val'>:state</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:state</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='upcase identifier id'>upcase</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='all identifier id'>all</span>
+<span class='get identifier id'>get</span> <span class='string val'>'/bystate/:state'</span> <span class='do do kw'>do</span>
+  <span class='zs identifier id'>zs</span> <span class='assign token'>=</span> <span class='Zip constant id'>Zip</span><span class='dot token'>.</span><span class='all identifier id'>all</span><span class='lparen token'>(</span><span class='symbol val'>:state</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:state</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='upcase identifier id'>upcase</span><span class='rparen token'>)</span>
   <span class='zs identifier id'>zs</span><span class='dot token'>.</span><span class='to_json identifier id'>to_json</span>
 <span class='end end kw'>end</span>
 </pre>
@@ -247,9 +276,9 @@
 </div>
     
       <div class="method_details ">
-  <p class="signature " id="GET___states__state_cities__city_-instance_route">
+  <p class="signature " id="GET___bystate__state_bycity__city_-instance_route">
   
-    - (<tt>Array</tt>) <strong>GET '/states/:state/cities/:city'</strong> 
+    - (<tt>Array</tt>) <strong>GET '/bystate/:state/bycity/:city'</strong> 
   
 
   
@@ -333,8 +362,8 @@
     <td>
       <pre class="code"><span class="info file"># File 'api.rb', line 26</span>
 
-<span class='get identifier id'>get</span> <span class='string val'>'/states/:state/cities/:city'</span> <span class='do do kw'>do</span>
-  <span class='zs identifier id'>zs</span> <span class='assign token'>=</span> <span class='Zip constant id'>Zip</span><span class='dot token'>.</span><span class='where identifier id'>where</span><span class='lparen token'>(</span><span class='symbol val'>:state</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:state</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='upcase identifier id'>upcase</span><span class='comma token'>,</span> <span class='symbol val'>:city</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:city</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='upcase identifier id'>upcase</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='all identifier id'>all</span>
+<span class='get identifier id'>get</span> <span class='string val'>'/bystate/:state/bycity/:city'</span> <span class='do do kw'>do</span>
+  <span class='zs identifier id'>zs</span> <span class='assign token'>=</span> <span class='Zip constant id'>Zip</span><span class='dot token'>.</span><span class='all identifier id'>all</span><span class='lparen token'>(</span><span class='symbol val'>:state</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:state</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='upcase identifier id'>upcase</span><span class='comma token'>,</span> <span class='symbol val'>:city</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:city</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='upcase identifier id'>upcase</span><span class='rparen token'>)</span>
   <span class='zs identifier id'>zs</span><span class='dot token'>.</span><span class='to_json identifier id'>to_json</span>
 <span class='end end kw'>end</span>
 </pre>
@@ -344,9 +373,123 @@
 </div>
     
       <div class="method_details ">
-  <p class="signature " id="GET___zips__code_-instance_route">
+  <p class="signature " id="GET___bystate__state_bycity__city_bycounty__county_-instance_route">
   
-    - (<tt>String</tt>) <strong>GET '/zips/:code'</strong> 
+    - (<tt>Array</tt>) <strong>GET '/bystate/:state/bycity/:city/bycounty/:county'</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+<p>Zip info for a given state/city/county combo</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <span class='name'>state</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>2 character state code</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <span class='name'>city</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>city name</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <span class='name'>county</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><ul><li>
+<p>county name</p>
+</li></ul>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>array of json objects containing city, state, lat, lng, etc.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+37
+38
+39
+40</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'api.rb', line 37</span>
+
+<span class='get identifier id'>get</span> <span class='string val'>'/bystate/:state/bycity/:city/bycounty/:county'</span> <span class='do do kw'>do</span>
+  <span class='zs identifier id'>zs</span> <span class='assign token'>=</span> <span class='Zip constant id'>Zip</span><span class='dot token'>.</span><span class='all identifier id'>all</span><span class='lparen token'>(</span><span class='symbol val'>:state</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:state</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='to_s identifier id'>to_s</span><span class='dot token'>.</span><span class='upcase identifier id'>upcase</span><span class='comma token'>,</span> <span class='symbol val'>:city</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:city</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='upcase identifier id'>upcase</span><span class='comma token'>,</span> <span class='symbol val'>:county</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:county</span><span class='rbrack token'>]</span><span class='dot token'>.</span><span class='upcase identifier id'>upcase</span><span class='rparen token'>)</span>
+  <span class='zs identifier id'>zs</span><span class='dot token'>.</span><span class='to_json identifier id'>to_json</span>
+<span class='end end kw'>end</span>
+</pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="GET___byzip__code_-instance_route">
+  
+    - (<tt>String</tt>) <strong>GET '/byzip/:code'</strong> 
   
 
   
@@ -413,7 +556,7 @@
     <td>
       <pre class="code"><span class="info file"># File 'api.rb', line 7</span>
 
-<span class='get identifier id'>get</span> <span class='string val'>'/zips/:code'</span> <span class='do do kw'>do</span>
+<span class='get identifier id'>get</span> <span class='string val'>'/byzip/:code'</span> <span class='do do kw'>do</span>
   <span class='z identifier id'>z</span> <span class='assign token'>=</span> <span class='Zip constant id'>Zip</span><span class='dot token'>.</span><span class='where identifier id'>where</span><span class='lparen token'>(</span><span class='symbol val'>:code</span> <span class='assign token'>=</span><span class='gt op'>&gt;</span> <span class='params identifier id'>params</span><span class='lbrack token'>[</span><span class='symbol val'>:code</span><span class='rbrack token'>]</span><span class='rparen token'>)</span><span class='dot token'>.</span><span class='first identifier id'>first</span>
   <span class='z identifier id'>z</span><span class='dot token'>.</span><span class='to_json identifier id'>to_json</span>
 <span class='end end kw'>end</span>
@@ -428,7 +571,7 @@
 </div>
     
     <div id="footer">
-  Generated on Wed Mar 23 11:27:30 2011 by 
+  Generated on Thu Mar 24 09:59:49 2011 by 
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.6.1 (ruby-1.8.7).
 </div>

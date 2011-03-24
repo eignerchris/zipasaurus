@@ -4,7 +4,7 @@ class Api < Sinatra::Base
   #
   # @param [String] code - zip code
   # @return [String] json object containing city, state, lat, lng, etc.
-  get '/zips/:code' do
+  get '/byzip/:code' do
     z = Zip.where(:code => params[:code]).first
     z.to_json
   end
@@ -13,8 +13,8 @@ class Api < Sinatra::Base
   #
   # @param [String] state - 2 character state code
   # @return [Array] array of json objects containing city, state, lat, lng, etc.
-  get '/states/:state' do
-    zs = Zip.all(:state => params[:state].to_s.upcase)
+  get '/bystate/:state' do
+    zs = Zip.all(:state => params[:state].upcase)
     zs.to_json
   end
 
@@ -23,13 +23,19 @@ class Api < Sinatra::Base
   # @param [String] state - 2 character state code
   # @param [String] city - city name
   # @return [Array] array of json objects containing city, state, lat, lng, etc.
-  get '/states/:state/cities/:city' do
-    zs = Zip.all(:state => params[:state].to_s.upcase, :city => params[:city].to_s.upcase)
+  get '/bystate/:state/bycity/:city' do
+    zs = Zip.all(:state => params[:state].to_s.upcase, :city => params[:city].upcase)
     zs.to_json
   end
 
-  # get '/cities/:city' do
-  #     zs = Zip.where(:city => params[:city].to_s.upcase).all
-  #     zs.to_json
-  #   end
+  # Zip info for a given state/city/county combo
+  #
+  # @param [String] state - 2 character state code
+  # @param [String] city - city name
+  # @param [String] county - county name
+  # @return [Array] array of json objects containing city, state, lat, lng, etc.
+  get '/bystate/:state/bycity/:city/bycounty/:county' do
+    zs = Zip.all(:state => params[:state].to_s.upcase, :city => params[:city].upcase, :county => params[:county].upcase)
+    zs.to_json
+  end
 end
