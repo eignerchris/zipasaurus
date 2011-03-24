@@ -4,6 +4,6 @@ map '/' do
   run Controller
 end
 
-map '/api' do
+map '/api/zipinfo' do
   run Api
 end
