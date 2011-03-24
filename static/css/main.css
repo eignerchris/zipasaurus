@@ -22,11 +22,8 @@ pre {
 }
 
 header {
+  font-size: 30px;
   text-align: center;
-}
-
-#headline-logo {
-  border: 0;
 }
 
 footer {

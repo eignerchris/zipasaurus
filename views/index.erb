@@ -1,20 +1,28 @@
 <div id="intro">
-	<p>Welcome to zipasaur.us, a dead-simple API for retrieving information about a given city, state, or zip in a speedy manner. Documentation <a href="Api.html">here</a>. If you are curious about performance or technical/implementation details, have a look <a href="perf-and-tech">here</a>. Special thanks to AJ Austinson and Lindsey Kirkbride for the logo!</p>
+	<h3>Welcome</h3>
+	<p>Fetching postal code info should be easy. zipasaur.us is a dead-simple API for retrieving information about a given city, state, or zip in a speedy manner. Documentation <a href="Api.html">here</a>. Performance and technical/implementation details <a href="perf-and-tech">here</a>. Special thanks to AJ Austinson and Lindsey Kirkbride for the logo!</p>
+</div>
+
+<div id="why">
+	<h3>Why?</h3>
+	<p>'Why?' is a good question. Tasked with implementing zip code validation in a web form, I figured there had to be an easier way. 'Surely there exists a restful service for this', I thought. When I failed to find such a service, I simply built it, figuring other people could benefit as well.</p>
 </div>
 
 <div id="getting-started">
 	<h3>Getting Started</h3>
 	
 	<p>To fetch info for a given zip code...</p>
-	<pre>curl http://zipasaur.us/api/zips/97209</pre>
+	<pre>http://zipasaur.us/api/zips/97209</pre>
 	
 	<p>To fetch info for all of Oregon...</p>
-	<pre>curl http://zipasaur.us/api/states/or</pre>
+	<pre>http://zipasaur.us/api/states/or</pre>
 	
 	<p>To fetch info for Portland, Oregon...</p>
-	<pre>curl http://zipasaur.us/api/states/or/cities/portland</pre>
+	<pre>http://zipasaur.us/api/states/or/cities/portland</pre>
+	
+	<p>Each of these queries will return Use anything that speaks HTTP!<p>
 	
 	<h3>Structure</h3>
 	<p>All zip code documents look like the following...</p>
-	<pre> => {"city":"PORTLAND","code":"97209","lng":"-122.683826","county":"MULTNOMAH","lat":"+45.531990","state":"OR"}</pre>
+	<pre>{"city":"PORTLAND","code":"97209","lng":"-122.683826","county":"MULTNOMAH","lat":"+45.531990","state":"OR"}</pre>
 </div>
