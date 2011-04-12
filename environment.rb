@@ -27,11 +27,7 @@ class Sinatra::Base
   
   use Rack::ShowExceptions if development?
   use Rack::MethodOverride
-  use Rack::Session::Cookie, :key => 'iamdelta.session',
-                             :path => '/',
-                             :expire_after => 2592000, # In seconds
-                             :secret => 'lj239cp0s9dd13093KK@jdl@DDa1Gw'
-    
+
   set :static, true
   set :root, File.expand_path(File.dirname(__FILE__))
   set :public, File.join(root, 'static')
