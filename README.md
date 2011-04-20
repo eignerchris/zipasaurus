@@ -9,14 +9,18 @@ zipasaur.us is a RESTish API for querying zip codes, cities, states, and countie
 
 	`sudo port install mongodb`
 
-2. bundle
+2. start mongod
+ 
+  `mongod`
+
+3. bundle
 	
 	`bundle install`
 
-3. import zip code data
+4. import zip code data
 	
 	`rake db:load_zip_info`
         
-3. start server
+5. start server
 	
-	`thin start -R config.ru -p 4567`
+	`thin start`
