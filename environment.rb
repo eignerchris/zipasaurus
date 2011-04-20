@@ -26,6 +26,7 @@ class Sinatra::Base
   end
   
   use Rack::ShowExceptions if development?
+  use Rack::CommonLogger
   use Rack::MethodOverride
 
   set :static, true
