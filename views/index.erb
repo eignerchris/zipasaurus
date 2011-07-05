@@ -1,29 +1,51 @@
-<div id="intro">
-	<h3>Welcome</h3>
-	<p>Fetching postal code info should be easy. zipasaur.us is a dead-simple API for retrieving zip code information about a given city, state, or zip in a speedy manner. Documentation <a href="Api.html">here</a>, although the entire API is listed below. The aim was to be as RESTful and easy to use as possible. Performance and technical/implementation details <a href="perf-and-tech">here</a>. Special thanks to AJ Austinson and Lindsey Kirkbride for the logo!</p>
-</div>
+<div id="main_content">
+	<ul id="content_nav">
+		<li class="content_tab"><a href="/">Get started</a></li>
+		<li class="content_tab"><a href="/">Structure</a></li>
+		<li class="content_tab"><a href="/">Use cases</a></li>
+	</ul> <!--end content_nav-->
+	
+	<div id="tout_1" class="tout">
+		<h3>Get Started</h3>
+		<ul id="start_examples">
+			<li class="code_example">
+				<p>To fetch info for a given zip code...</p>
+				<pre>http://zipasaur.us/api/zipinfo/byzip/97209</pre>
+			</li>
 
-<div id="why">
-	<h3>Why?</h3>
-	<p>'Why?' is a good question. Tasked with implementing zip code validation in a web form, I was told to download a database of zip codes and create a table against which to validate. 'Surely there exists a restful service for this', I thought. When I failed to find such a service, I decided to build it, figuring other people could benefit as well. The entire thing was up and running in less than a few hours.</p>
-</div>
+			<li class="code_example">
+				<p>To fetch info for all of Oregon...</p>
+				<pre>http://zipasaur.us/api/zipinfo/bystate/or</pre>
+			</li>
 
-<div id="getting-started">
-	<h3>Getting Started</h3>
+			<li class="code_example">
+				<p>To fetch info for Portland, Oregon...</p>
+				<pre>http://zipasaur.us/api/zipinfo/bystate/or/bycity/portland</pre>
+			</li>
+			
+			<li class="code_example">
+				<p>To fetch info for Multnomah County, Portland, Oregon...</p>
+				<pre>http://zipasaur.us/api/zipinfo/bystate/or/bycity/portland/bycounty/multnomah</pre>
+			</li>
+		</ul><!--end start_examples-->
+	</div> <!--end tout_1, get started-->
 	
-	<p>To fetch info for a given zip code...</p>
-	<pre>http://zipasaur.us/api/zipinfo/byzip/97209</pre>
+	<div id="tout_2" class="tout">
+		<h3>Structure</h3>
+		<ul id="structure_examples">
+			<li class="code_example">
+				<p>All zip code documents return JSON objects that look like the following...</p>
+						<pre>{"city":"PORTLAND","code":"97209","lng":"-122.683826","county":"MULTNOMAH","lat":"+45.531990","state":"OR"}</pre>
+			</li>
+		</ul>
+	</div> <!--end tout_2, structure-->
 	
-	<p>To fetch info for all of Oregon...</p>
-	<pre>http://zipasaur.us/api/zipinfo/bystate/or</pre>
-	
-	<p>To fetch info for Portland, Oregon...</p>
-	<pre>http://zipasaur.us/api/zipinfo/bystate/or/bycity/portland</pre>
-	
-	<p>To fetch info for Multnomah County, Portland, Oregon...</p>
-	<pre>http://zipasaur.us/api/zipinfo/bystate/or/bycity/portland/bycounty/multnomah</pre>
-	
-	<h3>Structure</h3>
-	<p>All zip code documents return JSON objects that look like the following...</p>
-	<pre>{"city":"PORTLAND","code":"97209","lng":"-122.683826","county":"MULTNOMAH","lat":"+45.531990","state":"OR"}</pre>
-</div>
+	<div id="tout_3" class="tout">
+		<h3>Use Cases</h3>
+		<ul id="case_examples">
+			<li class="code_example">
+				<p>There's nothing here yet</p>
+			</li>
+		</ul>
+	</div> <!--end tout_3, use cases-->
+</div> <!--end main_content-->

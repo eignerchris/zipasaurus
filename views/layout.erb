@@ -27,20 +27,24 @@
   </head>
   <body>
 		
-		<header>
-			<div id="headline">
+		<div id="container">
+			<header>
 				<h1>zipasaur.us</h1>
-				<img id="headline-logo" src="img/zipasaurus.png"/>
+				<div id="intro">
+						<h2>intro header copy</h2>
+						<p>lovely content here</p>
+				</div><!--end intro-->
+				<div class="clear"></div>
+			</header>
+
+			<div id="app-wrapper">
+				<%= yield %>
 			</div>
-		</header>
-		
-		<div id="app-wrapper">
-			<%= yield %>
-		</div>
-		
-		<footer>
-			<p><a href="Api.html">documentation</a></p>
-			<p>© 2011 Epsilon Eight</p>
-		</footer>
+			
+			<footer>
+				<p><a href="Api.html">documentation</a></p>
+				<p>&copy; 2011 epsilon eight</p>
+			</footer>
+		</div> <!--end container-->
   </body>
 </html>
