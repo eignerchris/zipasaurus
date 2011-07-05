@@ -1,5 +1,7 @@
 source :rubygems
 
+gem 'thin'
+gem 'rake'
 gem 'mongo_mapper',          '0.8.6'
 gem 'bson_ext'
 gem 'i18n'
