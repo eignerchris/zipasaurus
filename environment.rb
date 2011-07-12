@@ -13,6 +13,7 @@ class Sinatra::Base
   configure :development do
     MongoMapper.connection = Mongo::Connection.new('localhost')
     MongoMapper.database = 'zipinfo'
+    use Rack::ShowExceptions
   end
 
   configure :production do
@@ -22,10 +23,13 @@ class Sinatra::Base
     MongoMapper.connect 'production' 
     Zip.ensure_index :code 
     Zip.ensure_index :city 
-    Zip.ensure_index :state 
+    Zip.ensure_index :state
+    use Rack::Cache,
+      :verbose => true,
+      :metastore => "memcached://#{ENV['MEMCACHE_SERVERS']}",
+      :entitystore => "memcached://#{ENV['MEMCACHE_SERVERS']}" 
   end
   
-  use Rack::ShowExceptions if development?
   use Rack::CommonLogger
   use Rack::MethodOverride
 
