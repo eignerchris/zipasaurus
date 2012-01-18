@@ -23,7 +23,6 @@ class Sinatra::Base
 
   configure :production do
     ENV['APP_ROOT'] ||= File.dirname(__FILE__)
-    require 'newrelic_rpm'
     MongoMapper.config = {'production' => {'uri' => ENV['MONGOHQ_URL']}}
     MongoMapper.connect 'production' 
     Zip.ensure_index :code 
