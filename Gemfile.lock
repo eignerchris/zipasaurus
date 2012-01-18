@@ -17,7 +17,6 @@ GEM
       activesupport (>= 2.3.4)
       jnunemaker-validatable (~> 1.8.4)
       plucky (~> 0.3.6)
-    newrelic_rpm (2.14.1)
     plucky (0.3.7)
       mongo (~> 1.1)
     rack (1.2.2)
@@ -44,7 +43,6 @@ DEPENDENCIES
   dalli
   i18n
   mongo_mapper (= 0.8.6)
-  newrelic_rpm
   rack-cache
   rack-jsonp
   rake
