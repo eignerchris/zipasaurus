@@ -24,7 +24,7 @@ class Sinatra::Base
     Zip.ensure_index :code 
     Zip.ensure_index :city 
     Zip.ensure_index :state
-    set :cache, Dalli::Client.new
+    $memcache = Dalli::Client.new
   end
   
   use Rack::CommonLogger

@@ -9,8 +9,12 @@ class Api < Sinatra::Base
   get '/byzip/:code' do
     content_type 'application/json'
     cache_control :public, :max_age => CACHE_TIME
-    z = Zip.where(:code => params[:code]).first
-    z.to_json
+    record = $memcache.get(params[:code])
+    if record.nil?
+      record = Zip.where(:code => params[:code]).first
+      $memcache.set(params[:code], record)
+    end
+    record.to_json
   end
 
   # Zip info for a given state
