@@ -14,6 +14,11 @@ class Sinatra::Base
     MongoMapper.connection = Mongo::Connection.new('localhost')
     MongoMapper.database = 'zipinfo'
     use Rack::ShowExceptions
+    $memcache = Dalli::Client.new
+    use Rack::Cache,
+    :verbose => true,
+    :metastore => $memcache,
+    :entitystore => $memcache
   end
 
   configure :production do
