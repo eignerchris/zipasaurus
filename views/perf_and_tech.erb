@@ -6,32 +6,43 @@
 	
 	<div id="performance">
 		<h3>Performance</h3>
-		<pre>$ ab -n 1000 -c 50 http://zipasaur.us/api/zipinfo/byzip/97209
-Server Software:        nginx/0.7.67
+		<pre>$ ab -n 2000 -c 500 http://zipasaur.us/api/zipinfo/byzip/97209
+Server Software:        nginx
 Server Hostname:        zipasaur.us
 Server Port:            80
 
 Document Path:          /api/zipinfo/byzip/97209
 Document Length:        139 bytes
 
-Concurrency Level:      50
-Time taken for tests:   4.409372 seconds
-Complete requests:      1000
+Concurrency Level:      500
+Time taken for tests:   2.247 seconds
+Complete requests:      2000
 Failed requests:        0
 Write errors:           0
-Total transferred:      373897 bytes
-HTML transferred:       139139 bytes
-Requests per second:    226.79 [#/sec] (mean)
-Time per request:       220.469 [ms] (mean)
-Time per request:       4.409 [ms] (mean, across all concurrent requests)
-Transfer rate:          82.78 [Kbytes/sec] received
+Total transferred:      922934 bytes
+HTML transferred:       278000 bytes
+Requests per second:    890.18 [#/sec] (mean)
+Time per request:       561.687 [ms] (mean)
+Time per request:       1.123 [ms] (mean, across all concurrent requests)
+Transfer rate:          401.16 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:       71   72   2.5     72      96
-Processing:    81  142  50.3    130     387
-Waiting:       80  140  50.3    129     386
-Total:        153  214  50.4    203     461
+Connect:        1    8   7.3      3      31
+Processing:    27  472 323.6    525     963
+Waiting:       27  472 323.6    525     963
+Total:         46  480 317.5    527     965
+
+Percentage of the requests served within a certain time (ms)
+  50%    527
+  66%    729
+  75%    789
+  80%    821
+  90%    865
+  95%    880
+  98%    910
+  99%    925
+ 100%    965 (longest request)
 		</pre>
 	</div>
 </div>
