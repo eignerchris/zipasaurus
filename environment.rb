@@ -24,10 +24,7 @@ class Sinatra::Base
     Zip.ensure_index :code 
     Zip.ensure_index :city 
     Zip.ensure_index :state
-    use Rack::Cache,
-      :verbose => true,
-      :metastore => "memcached://#{ENV['MEMCACHE_SERVERS']}",
-      :entitystore => "memcached://#{ENV['MEMCACHE_SERVERS']}" 
+    set :cache, Dalli::Client.new
   end
   
   use Rack::CommonLogger
