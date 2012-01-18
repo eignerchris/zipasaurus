@@ -2,18 +2,24 @@ class Api < Sinatra::Base
 
   CACHE_TIME = 7200
   
+  before do
+    content_type 'application/json'
+    cache_control :public, :max_age => CACHE_TIME
+  end
+
   # Zip info for a given zip code
   #
   # @param [String] code - zip code
   # @return [String] json object containing city, state, lat, lng, etc.
   get '/byzip/:code' do
-    content_type 'application/json'
-    cache_control :public, :max_age => CACHE_TIME
-    record = $memcache.get(params[:code])
+    code   = params[:code]
+    record = $memcache.get(code)
+    
     if record.nil?
-      record = Zip.where(:code => params[:code]).first
-      $memcache.set(params[:code], record)
+      record = Zip.where(:code => code).first
+      $memcache.set(code, record)
     end
+    
     record.to_json
   end
 
@@ -22,10 +28,15 @@ class Api < Sinatra::Base
   # @param [String] state - 2 character state code
   # @return [Array] array of json objects containing city, state, lat, lng, etc.
   get '/bystate/:state' do
-    content_type 'application/json'
-    cache_control :public, :max_age => CACHE_TIME
-    zs = Zip.all(:state => params[:state].upcase)
-    zs.to_json
+    state   = params[:state].upcase
+    records = $memcache.get(state)
+    
+    if record.nil?
+      records = Zip.all(:state => state)
+      $memcache.set(state, records)
+    end
+    
+    records.to_json
   end
 
   # Zip info for a given state and city
@@ -34,10 +45,16 @@ class Api < Sinatra::Base
   # @param [String] city - city name
   # @return [Array] array of json objects containing city, state, lat, lng, etc.
   get '/bystate/:state/bycity/:city' do
-    content_type 'application/json'
-    cache_control :public, :max_age => CACHE_TIME
-    zs = Zip.all(:state => params[:state].to_s.upcase, :city => params[:city].upcase)
-    zs.to_json
+    state = params[:state].upcase
+    city  = params[:city].upcase
+
+    records = $memcache.get("#{state}_#{city}")
+    if records.nil?
+      records = Zip.all(:state => state, :city => city)
+      $memcache.set("#{state}_#{city}", records)
+    end
+
+    records.to_json
   end
 
   # Zip info for a given state/city/county combo
@@ -47,9 +64,16 @@ class Api < Sinatra::Base
   # @param [String] county - county name
   # @return [Array] array of json objects containing city, state, lat, lng, etc.
   get '/bystate/:state/bycity/:city/bycounty/:county' do
-    content_type 'application/json'
-    cache_control :public, :max_age => CACHE_TIME
-    zs = Zip.all(:state => params[:state].to_s.upcase, :city => params[:city].upcase, :county => params[:county].upcase)
-    zs.to_json
+    state  = params[:state].upcase
+    city   = params[:city].upcase
+    county = params[:county].upcase
+
+    records = $memcache.get("#{state}_#{city}_#{county}")
+    if records.nil?
+      records = Zip.all(:state => state, :city => city, :county => county)
+      $memcache.set("#{state}_#{city}_#{county}", records)
+    end
+    
+    records.to_json
   end
 end
