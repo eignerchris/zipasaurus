@@ -1,4 +1,4 @@
-class Api < Sinatra::Base
+class Api < ZipasaurusApp
 
   CACHE_TIME = 7200
   

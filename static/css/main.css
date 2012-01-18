@@ -1,25 +1,3 @@
-body {
-  font-family: Times;
-  min-width: 50%;
-  min-height: 50%;
-}
-
-/*pre {
-  border: 1px solid #bbb;
-  background-color: white;
-  overflow: auto;
-  height: auto;
-  font-size: 20px;
-  line-height: 35px;
-  padding-left: 10px;
-}
-*/
-
-header {
-  font-size: 30px;
-  text-align: center;
-}
-
 footer {
   text-align: center;
 }
@@ -28,11 +6,6 @@ footer p {
   font-size: 12px;
 }
 
-/*#app-wrapper {
-  text-align: left;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 70%;
+.headline {
+  text-align: center;
 }
-*/

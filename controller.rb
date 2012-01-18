@@ -1,4 +1,4 @@
-class Controller < Sinatra::Base
+class Controller < ZipasaurusApp
 
   get '/?' do
     erb :index
