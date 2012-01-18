@@ -7,3 +7,10 @@ end
 map '/api/zipinfo' do
   run Api
 end
+
+map '/amnesia' do
+  Amnesia::Application
+end
+
+#use Amnesia::Application
+#run Sinatra::Application

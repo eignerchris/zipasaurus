@@ -29,6 +29,11 @@ class Sinatra::Base
   
   use Rack::CommonLogger
   use Rack::MethodOverride
+  use Rack::JSONP
+  use Rack::Cache,
+    :verbose => true,
+    :metastore => "memcached://#{ENV['MEMCACHE_SERVERS']}",
+    :entitystore => "memcached://#{ENV['MEMCACHE_SERVERS']}"
 
   set :static, true
   set :root, File.expand_path(File.dirname(__FILE__))

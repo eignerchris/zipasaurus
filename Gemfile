@@ -1,4 +1,5 @@
 source :rubygems
+source 'http://gems.github.com'
 
 gem 'thin'
 gem 'rake'
@@ -10,3 +11,4 @@ gem 'sinatra',              '1.2.0', :require => 'sinatra/base'
 gem 'newrelic_rpm'
 gem 'dalli'
 gem 'rack-cache'
+gem 'rack-jsonp'
