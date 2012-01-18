@@ -13,6 +13,7 @@ class Api < Sinatra::Base
   # @return [String] json object containing city, state, lat, lng, etc.
   get '/byzip/:code' do
     code   = params[:code]
+    
     record = $memcache.get(code)
     
     if record.nil?
@@ -29,9 +30,10 @@ class Api < Sinatra::Base
   # @return [Array] array of json objects containing city, state, lat, lng, etc.
   get '/bystate/:state' do
     state   = params[:state].upcase
+
     records = $memcache.get(state)
     
-    if record.nil?
+    if records.nil?
       records = Zip.all(:state => state)
       $memcache.set(state, records)
     end
