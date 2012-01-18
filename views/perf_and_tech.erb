@@ -1,7 +1,7 @@
 <div id="perf-and-tech-wrapper">
 	<div id="technicals">
 		<h3>Technical Details</h3>
-		<p>zipasaur.us is built on <a href="http://www.sinatrarb.com/">Sinatra</a>, a minimalist web development framework. The backend is a mongo database with John Nunemaker's <a href="https://github.com/jnunemaker/mongomapper">mongomapper</a> acting as the ORM. For quick scaling and ease of deployment, zipasaur.us is deployed on <a href="http://heroku.com">Heroku</a> and the database setup on <a href="http://mongohq.com">MongoHQ</a>. The database consists of approximately 42k zipinfo documents, each containing zip, city, state, county, lat, and lng keys. Admittedly, the API isn't all that RESTful, but I did my best to make it easy to use.</p>
+		<p>zipasaur.us is built on <a href="http://www.sinatrarb.com/">Sinatra</a>, a minimalist web development framework. The backend is a mongo database with John Nunemaker's <a href="https://github.com/jnunemaker/mongomapper">mongomapper</a> acting as the ORM. For quick scaling and ease of deployment, zipasaur.us is deployed on <a href="http://heroku.com">Heroku</a> and the database setup on <a href="http://mongohq.com">MongoHQ</a>. The database consists of approximately 42k zipinfo documents, each containing zip, city, state, county, lat, and lng keys. The application is json-p compatible, thanks to Rack::JSONP, and makes use of Rack::Cache, and memcache to ease load on the server and database.</p>
 	</div>
 	
 	<div id="performance">
