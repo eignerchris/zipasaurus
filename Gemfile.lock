@@ -26,8 +26,6 @@ GEM
     sinatra (1.2.0)
       rack (~> 1.1)
       tilt (>= 1.2.2, < 2.0)
-    sinatra-namespace (0.6.1)
-      sinatra (~> 1.1)
     thin (1.2.11)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -47,6 +45,5 @@ DEPENDENCIES
   rack-cache
   rake
   sinatra (= 1.2.0)
-  sinatra-namespace (= 0.6.1)
   thin
   yajl-ruby (= 0.8.1)

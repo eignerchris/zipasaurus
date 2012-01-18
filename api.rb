@@ -7,6 +7,7 @@ class Api < Sinatra::Base
   # @param [String] code - zip code
   # @return [String] json object containing city, state, lat, lng, etc.
   get '/byzip/:code' do
+    content_type 'application/json'
     cache_control :public, :max_age => CACHE_TIME
     z = Zip.where(:code => params[:code]).first
     z.to_json
@@ -17,6 +18,7 @@ class Api < Sinatra::Base
   # @param [String] state - 2 character state code
   # @return [Array] array of json objects containing city, state, lat, lng, etc.
   get '/bystate/:state' do
+    content_type 'application/json'
     cache_control :public, :max_age => CACHE_TIME
     zs = Zip.all(:state => params[:state].upcase)
     zs.to_json
@@ -28,6 +30,7 @@ class Api < Sinatra::Base
   # @param [String] city - city name
   # @return [Array] array of json objects containing city, state, lat, lng, etc.
   get '/bystate/:state/bycity/:city' do
+    content_type 'application/json'
     cache_control :public, :max_age => CACHE_TIME
     zs = Zip.all(:state => params[:state].to_s.upcase, :city => params[:city].upcase)
     zs.to_json
@@ -40,6 +43,7 @@ class Api < Sinatra::Base
   # @param [String] county - county name
   # @return [Array] array of json objects containing city, state, lat, lng, etc.
   get '/bystate/:state/bycity/:city/bycounty/:county' do
+    content_type 'application/json'
     cache_control :public, :max_age => CACHE_TIME
     zs = Zip.all(:state => params[:state].to_s.upcase, :city => params[:city].upcase, :county => params[:county].upcase)
     zs.to_json

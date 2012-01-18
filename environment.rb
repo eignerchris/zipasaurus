@@ -37,7 +37,6 @@ class Sinatra::Base
   set :root, File.expand_path(File.dirname(__FILE__))
   set :public, File.join(root, 'static')
   set :dump_errors, true
-  register Sinatra::Namespace
 end
 
 puts "Starting in #{Sinatra::Base.environment} mode..."
