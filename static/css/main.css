@@ -9,3 +9,11 @@ footer p {
 .headline {
   text-align: center;
 }
+
+.span6 {
+  padding-top:50px;
+}
+
+.span8 {
+  text-align:right;
+}

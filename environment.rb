@@ -18,11 +18,6 @@ class ZipasaurusApp < Sinatra::Base
     use Rack::ShowExceptions
     
     $memcache = Dalli::Client.new
-    
-    use Rack::Cache,
-      :verbose => true,
-      :metastore => $memcache,
-      :entitystore => $memcache
   end
 
   configure :production do

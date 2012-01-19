@@ -1,29 +1,24 @@
 <div id="intro">
-	<h3>Welcome</h3>
+	<h2>Welcome</h2>
 	<p>zipasaur.us is a dead-simple API for retrieving zip code information about a given city, state, or zip in a speedy manner. Documentation <a href="Api.html">here</a>, although the entire API is listed below. The aim was to be as RESTful and easy to use as possible. Performance and technical/implementation details <a href="perf-and-tech">here</a>. Special thanks to AJ Austinson and Lindsey Kirkbride for the logo!</p>
 </div>
 
-<div id="why">
-	<h3>Why?</h3>
-	<p>Tasked with implementing zip code validation in a web form, I was told to download a database of zip codes and create a database. 'Surely there exists a restful service for this', I thought. When I failed to find such a service, I decided to build it, figuring other people could benefit as well.</p>
-</div>
-
 <div id="getting-started">
-	<h3>Getting Started</h3>
+	<h2>Getting Started</h2>
 	
-	<p>To fetch info for a given zip code...<a target="new" href="http://hurl.it/hurls/c1895efb4919e256dddce9357f97378f5f86ac23/fa03b78485026cc1212c5978c9592ed455becc38">Try it!</a></p>
+	<h4>Search by Zip Code <a target="new" href="http://hurl.it/hurls/c1895efb4919e256dddce9357f97378f5f86ac23/fa03b78485026cc1212c5978c9592ed455becc38">Try it!</a></h4>
 	<pre>http://zipasaur.us/api/zipinfo/byzip/97209</pre>
 	
-	<p>To fetch info for all of Oregon...<a target="new" href="http://hurl.it/hurls/074c5c5d69350bd360bd9aa777d105213e9fef40/3e2ce46038dafb34a374f894b0137a3e8f9d68e6">Try it!</a></p>
+	<h4>Search by State <a target="new" href="http://hurl.it/hurls/074c5c5d69350bd360bd9aa777d105213e9fef40/3e2ce46038dafb34a374f894b0137a3e8f9d68e6">Try it!</a></h4>
 	<pre>http://zipasaur.us/api/zipinfo/bystate/or</pre>
 	
-	<p>To fetch info for Portland, Oregon...<a target="new" href="http://hurl.it/hurls/44cbf2c93283fde7303b1b1fc8bda01fd33444ec/de8f1b2dfae22a351c6f34074b886c5e9b8fa0d3">Try it!</a></p>
+	<h4>Search by City <a target="new" href="http://hurl.it/hurls/44cbf2c93283fde7303b1b1fc8bda01fd33444ec/de8f1b2dfae22a351c6f34074b886c5e9b8fa0d3">Try it!</a></h4>
 	<pre>http://zipasaur.us/api/zipinfo/bystate/or/bycity/portland</pre>
 	
-	<p>To fetch info for Multnomah County, Portland, Oregon...<a target="new" href="http://hurl.it/hurls/1c29ef56e26923758d37267d114ff5b6fa3ed8bb/392117ed1d49e6021cc96a6c6964e5286cb2ab57">Try it!</a></p>
+	<h4>Search by County <a target="new" href="http://hurl.it/hurls/1c29ef56e26923758d37267d114ff5b6fa3ed8bb/392117ed1d49e6021cc96a6c6964e5286cb2ab57">Try it!</a></h4>
 	<pre>http://zipasaur.us/api/zipinfo/bystate/or/bycity/portland/bycounty/multnomah</pre>
 	
-	<h3>Structure</h3>
-	<p>All zip code documents return JSON objects that look like the following...</p>
-	<pre>{"city":"PORTLAND","code":"97209","lng":"-122.683826","county":"MULTNOMAH","lat":"+45.531990","state":"OR"}</pre>
+	<h4>Response</h4>
+	<p>All zip code documents returned are JSON objects that look like the following:</p>
+	<pre>{ "city":"PORTLAND","code":"97209","lng":"-122.683826","county":"MULTNOMAH","lat":"+45.531990","state":"OR" }</pre>
 </div>
