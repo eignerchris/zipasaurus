@@ -11,7 +11,7 @@ zipasaur.us is a RESTish API for querying zip codes, cities, states, and countie
 
 2. start mongod in a seperate console or in background
  
-  `mongod &`
+ 	`mongod &`
 
 3. bundle
 	
