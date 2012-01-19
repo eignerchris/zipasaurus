@@ -3,9 +3,7 @@
 ## overview ##
 zipasaur.us is a RESTish API for querying zip codes, cities, states, and counties.
 
-## technical details ##
-
-### local development ###
+## local development ##
 
 1. install mongodb
 
