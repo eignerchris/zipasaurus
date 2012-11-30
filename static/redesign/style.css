@@ -1,0 +1,97 @@
+body, p, h1, h2, h3, h4, h5, h6, input, select, option, section, aside{
+	margin:0;
+	padding:0;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 18px;
+	color: #8b8b8b;
+}
+.clear-both{
+	clear: both;
+}
+.wrapper{
+	margin:0 auto;
+	max-width:1020px;
+	min-width:560px;
+	padding-left: 20px;
+}
+header{
+	margin:50px 50px;
+}
+header hgroup{
+	margin:0 auto;
+	width:500px;
+}
+h1{
+	font-size: 72px;
+	line-height: 70px;
+	font-weight: 900;
+	color:#a7cf5d;
+}
+
+h2{
+	font-size: 32px;
+	font-weight:500;
+	color:#5d95cf;
+	margin:20px 0;
+}
+h3{
+	font-size: 24px;
+	font-weight:500;
+	color:#5d95cf;
+	margin:20px 0;
+}
+h4{
+	font-size: 20px;
+	font-weight: 500;
+	color: #5d95cf;
+}
+.welcome, .getting-started, .response{
+	margin-bottom: 40px;
+}
+.welcome, .getting-started{
+	width:45%;
+	
+}
+.getting-started select{
+	margin: 20px 0;
+}
+.getting-started input{
+	width:100%;
+	height:30px;
+	border: solid 1px #a7cf5d;
+	background-color: #f6f4f4;
+}
+.response{
+	color:#4b4b4b;
+	}
+.response p{
+	margin:20px 0;
+}
+.response ol{
+	width:95%;
+	border: solid 1px #a7cf5d;
+	/*background-color: #f6f4f4;*/
+	color:#5d95cf;
+	padding: 10px 28px;
+	background: url(graybg.jpg) 0 0 repeat-y #f6f4f4;
+
+}
+.response ol li{
+	padding-left: 15px;
+	
+}
+.response ol li p{
+	color:#4b4b4b;
+	margin:0;
+	padding: 0;
+	
+}
+#map_canvas{
+	margin-top:-200px;
+	border: solid 1px #a7cf5d;
+	width:45%;
+	height:350px;
+	float: right;
+}
