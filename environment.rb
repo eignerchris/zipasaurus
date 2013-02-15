@@ -16,7 +16,6 @@ class ZipasaurusApp < Sinatra::Base
   end
 
   configure :production do
-    ENV['APP_ROOT'] ||= File.dirname(__FILE__)
   end
   
   use Rack::CommonLogger
