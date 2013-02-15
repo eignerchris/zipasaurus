@@ -38,7 +38,7 @@ class Api < ZipasaurusApp
     state = params[:state].upcase
     city  = params[:city].upcase
 
-    records = Zip.by_state.key(state).collect { |r| r.city == city }
+    records = Zip.by_state.key(state).select { |r| r.city == city }
 
     records.to_json
   end
@@ -54,7 +54,7 @@ class Api < ZipasaurusApp
     city   = params[:city].upcase
     county = params[:county].upcase
 
-    records = Zip.by_state.key(state).collect {|r| r.city == city }.collect { |r| r.county == county }
+    records = Zip.by_state.key(state).select {|r| r.city == city }.select { |r| r.county == county }
   
     records.to_json
   end
