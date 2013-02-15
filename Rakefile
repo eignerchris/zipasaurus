@@ -13,6 +13,6 @@ namespace :db do
 
   desc "boostraps database - destroys all zip documents"
   task :bootstrap do
-    Zip.destroy_all
+    Zip.all.map(&:destroy)
   end
 end
