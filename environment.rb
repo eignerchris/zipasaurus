@@ -16,6 +16,10 @@ class ZipasaurusApp < Sinatra::Base
   end
 
   configure :production do
+    CouchRest::Model::Base.configure do |conf|
+      conf.environment = ZipasaurusApp.environment
+      conf.connection_config_file = File.join('.', 'config', 'couchdb.yml')
+    end
   end
   
   use Rack::CommonLogger
