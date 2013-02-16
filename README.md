@@ -7,11 +7,11 @@ zipasaur.us is a RESTish API for querying zip codes, cities, states, and countie
 
 1. install mongodb
 
-	`sudo port install mongodb` or `brew install mongodb`
+	`brew install couchdb`
 
-2. start mongod in a seperate console or in background
+2. start couchdb in a seperate console or in background
  
- 	`mongod &`
+ 	`couchdb`
 
 3. bundle
 	
