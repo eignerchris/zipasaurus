@@ -1,18 +1,17 @@
-class Zip < CouchRest::Model::Base
+class Zip
+  include CouchPotato::Persistence
   
-  property :code,   String
-  property :lat,    String
-  property :lng,    String
-  property :city,   String
-  property :state,  String
-  property :county, String
-  
-  design do
-    view :by_code
-    view :by_state
-  end
+  property :code,   type: String
+  property :lat,    type: String
+  property :lng,    type: String
+  property :city,   type: String
+  property :state,  type: String
+  property :county, type: String
 
-  def as_json(options={})
+  view :by_code, key: :code
+  view :by_state, key: :state
+
+  def to_json(options={})
     { code: code,
       lat: lat,
       lng: lng,

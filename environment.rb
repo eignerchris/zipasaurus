@@ -13,13 +13,11 @@ class ZipasaurusApp < Sinatra::Base
 
   configure :development do
     use Rack::ShowExceptions
+    CouchPotato::Config.database_name = "http://localhost:5984/zipasaurus"
   end
 
   configure :production do
-    CouchRest::Model::Base.configure do |conf|
-      conf.environment = ZipasaurusApp.environment
-      conf.connection_config_file = File.join('.', 'config', 'couchdb.yml')
-    end
+    CouchPotato::Config.database_name = "https://eignerchris:thereisnospoon@eignerchris.cloudant.com/zipasaurus"
   end
   
   use Rack::CommonLogger
