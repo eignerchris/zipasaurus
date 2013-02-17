@@ -11,14 +11,14 @@ class Api < ZipasaurusApp
     code   = params[:code]
     record = CouchPotato.database.view(Zip.by_code(code)).first
     
-    record.to_json
+    Zip.to_json(record).to_json
   end
 
   get '/state/:state' do
     state   = params[:state].upcase
     records = CouchPotato.database.view(Zip.by_state(state))
     
-    records.to_json
+    Zip.to_json(records).to_json
   end
 
   get '/state/:state/city/:city' do
@@ -27,7 +27,7 @@ class Api < ZipasaurusApp
 
     records = CouchPotato.database.view(Zip.by_state(state)).select { |r| r['city'] == city }
 
-    records.to_json
+    Zip.to_json(records).to_json
   end
 
   get '/state/:state/county/:county' do
@@ -36,6 +36,6 @@ class Api < ZipasaurusApp
 
     records = CouchPotato.database.view(Zip.by_state(state)).select { |r| r['county'] == county }
   
-    records.to_json
+    Zip.to_json(records).to_json
   end
 end

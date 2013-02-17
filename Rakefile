@@ -10,9 +10,4 @@ namespace :db do
       print '.' if CouchPotato.database.save_document(z)
     end
   end
-
-  desc "boostraps database - destroys all zip documents"
-  task :bootstrap do
-    Zip.all.map(&:destroy)
-  end
 end
