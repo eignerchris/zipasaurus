@@ -1,19 +1,15 @@
-footer {
-  text-align: center;
+pre {
+  display: inline-block;
 }
 
-footer p {
-  font-size: 12px;
+#getting-started .btn{
+  float: right;
 }
 
-.headline {
-  text-align: center;
-}
-
-.span6 {
-  padding-top:50px;
-}
-
-.span8 {
-  text-align:right;
+.footer {
+text-align: center;
+padding: 30px 0;
+margin-top: 70px;
+border-top: 1px solid #e5e5e5;
+background-color: #f5f5f5;
 }

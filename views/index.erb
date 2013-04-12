@@ -1,24 +1,22 @@
-<div id="intro">
-	<h2>Welcome</h2>
-	<p>zipasaur.us is a dead-simple API for retrieving zip code information about a given city, state, or zip in a speedy manner. Documentation <a href="Api.html">here</a>, although the entire API is listed below. The aim was to be as RESTful and easy to use as possible. Performance and technical/implementation details <a href="perf-and-tech">here</a>. Special thanks to AJ Austinson and Lindsey Kirkbride for the logo!</p>
-</div>
-
-<div id="getting-started">
-	<h2>Getting Started</h2>
-	
+<section id="getting-started">
+	<h1>API</h1>
 	<h4>Search by Zip Code</h4>
 	<pre>http://zipasaur.us/api/zipinfo/zip/97209</pre>
-	
+	<a href="http://zipasaur.us/api/zipinfo/zip/97209" target="new" class="btn btn-large btn-primary">Try it!</a>
+
 	<h4>Search by State</h4>
 	<pre>http://zipasaur.us/api/zipinfo/state/or</pre>
-	
+	<a href="http://zipasaur.us/api/zipinfo/state/or" target="new" class="btn btn-large btn-primary">Try it!</a>
+
 	<h4>Search by City</h4>
 	<pre>http://zipasaur.us/api/zipinfo/state/or/city/portland</pre>
-	
+	<a href="http://zipasaur.us/api/zipinfo/state/or/city/portland" target="new" class="btn btn-large btn-primary">Try it!</a>
+
 	<h4>Search by County</h4>
 	<pre>http://zipasaur.us/api/zipinfo/state/or/city/portland/county/multnomah</pre>
-	
-	<h4>Response</h4>
+	<a href="http://zipasaur.us/api/zipinfo/state/or" target="new" class="btn btn-large btn-primary">Try it!</a>
+
+	<h1>Response</h1>
 	<p>All zip code documents returned are JSON objects that look like the following:</p>
 	<pre>{ "city":"PORTLAND","code":"97209","lng":"-122.683826","county":"MULTNOMAH","lat":"+45.531990","state":"OR" }</pre>
-</div>
+</section>
