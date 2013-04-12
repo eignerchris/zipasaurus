@@ -7,7 +7,6 @@ require 'pp'
 class ZipasaurusApp < Sinatra::Base
 
   require File.join(File.expand_path(File.dirname(__FILE__)), 'controller.rb')
-  require File.join(File.expand_path(File.dirname(__FILE__)), 'api.rb')
 
   Dir.glob(['lib', 'models'].map! {|d| File.join File.expand_path(File.dirname(__FILE__)), d, '*.rb'}).each {|f| require f}
 
