@@ -1,6 +1,5 @@
-source :rubygems
-source 'http://gems.github.com'
-
+source 'https://gems.github.com'
+ruby '1.9.2'
 gem 'thin'
 gem 'rake'
 gem 'sinatra'
