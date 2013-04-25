@@ -20,7 +20,7 @@ class Controller < ZipasaurusApp
     content_type 'application/json'
     cache_control :public, max_age: CACHE_TIME
 
-    state   = params[:state].upcase
+    state   = STATE_ABBREV[params[:state].downcase].upcase
     records = CouchPotato.database.view(Zip.by_state(state))
     
     Zip.to_json(records).to_json
@@ -30,7 +30,7 @@ class Controller < ZipasaurusApp
     content_type 'application/json'
     cache_control :public, max_age: CACHE_TIME
 
-    state = params[:state].upcase
+    state = STATE_ABBREV[params[:state].downcase].upcase
     city  = params[:city].upcase
 
     records = CouchPotato.database.view(Zip.by_state(state)).select { |r| r['city'] == city }
@@ -42,7 +42,7 @@ class Controller < ZipasaurusApp
     content_type 'application/json'
     cache_control :public, max_age: CACHE_TIME
     
-    state  = params[:state].upcase
+    state  = STATE_ABBREV[params[:state].downcase].upcase
     county = params[:county].upcase
 
     records = CouchPotato.database.view(Zip.by_state(state)).select { |r| r['county'] == county }
