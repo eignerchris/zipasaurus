@@ -13,7 +13,7 @@ class Zip
 
   def self.to_json(data)
     if data.is_a? Array
-      data.collect do |r|
+      data.map do |r|
         { code: r['code'],
           lat: r['lat'],
           lng: r['lng'],
