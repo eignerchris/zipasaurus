@@ -1,0 +1,36 @@
+# Logfile created on 2013-04-26 12:13:11 -0700 by logger.rb/25413
+[04/26/13 12:13:11 -0700 Chriss-MacBook-Air.local (51897)] INFO : Dispatcher: unicorn
+[04/26/13 12:13:11 -0700 Chriss-MacBook-Air.local (51897)] INFO : Application: development
+[04/26/13 12:13:11 -0700 Chriss-MacBook-Air.local (51897)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
+[04/26/13 12:13:11 -0700 Chriss-MacBook-Air.local (51897)] INFO : New Relic Ruby Agent 3.3.2.1 Initialized: pid = 51897
+[04/26/13 12:13:11 -0700 Chriss-MacBook-Air.local (51897)] INFO : Agent Log at /Users/eignerchris/Development/zipasaurus/log/newrelic_agent.log
+[04/26/13 12:15:00 -0700 Chriss-MacBook-Air.local (51949)] INFO : Dispatcher: sinatra
+[04/26/13 12:15:00 -0700 Chriss-MacBook-Air.local (51949)] INFO : Application: development
+[04/26/13 12:15:00 -0700 Chriss-MacBook-Air.local (51949)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
+[04/26/13 12:15:00 -0700 Chriss-MacBook-Air.local (51949)] INFO : New Relic Ruby Agent 3.3.2.1 Initialized: pid = 51949
+[04/26/13 12:15:00 -0700 Chriss-MacBook-Air.local (51949)] INFO : Agent Log at /Users/eignerchris/Development/zipasaurus/log/newrelic_agent.log
+[04/26/13 12:15:41 -0700 Chriss-MacBook-Air.local (51968)] INFO : Dispatcher: sinatra
+[04/26/13 12:15:41 -0700 Chriss-MacBook-Air.local (51968)] INFO : Application: development
+[04/26/13 12:15:41 -0700 Chriss-MacBook-Air.local (51968)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
+[04/26/13 12:15:41 -0700 Chriss-MacBook-Air.local (51968)] INFO : New Relic Ruby Agent 3.3.2.1 Initialized: pid = 51968
+[04/26/13 12:15:41 -0700 Chriss-MacBook-Air.local (51968)] INFO : Agent Log at /Users/eignerchris/Development/zipasaurus/log/newrelic_agent.log
+[04/26/13 12:16:00 -0700 Chriss-MacBook-Air.local (51989)] INFO : Dispatcher: sinatra
+[04/26/13 12:16:00 -0700 Chriss-MacBook-Air.local (51989)] INFO : Application: development
+[04/26/13 12:16:00 -0700 Chriss-MacBook-Air.local (51989)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
+[04/26/13 12:16:00 -0700 Chriss-MacBook-Air.local (51989)] INFO : New Relic Ruby Agent 3.3.2.1 Initialized: pid = 51989
+[04/26/13 12:16:00 -0700 Chriss-MacBook-Air.local (51989)] INFO : Agent Log at /Users/eignerchris/Development/zipasaurus/log/newrelic_agent.log
+[04/26/13 12:16:49 -0700 Chriss-MacBook-Air.local (52019)] INFO : Dispatcher: sinatra
+[04/26/13 12:16:49 -0700 Chriss-MacBook-Air.local (52019)] INFO : Application: development
+[04/26/13 12:16:49 -0700 Chriss-MacBook-Air.local (52019)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
+[04/26/13 12:16:49 -0700 Chriss-MacBook-Air.local (52019)] INFO : New Relic Ruby Agent 3.3.2.1 Initialized: pid = 52019
+[04/26/13 12:16:49 -0700 Chriss-MacBook-Air.local (52019)] INFO : Agent Log at /Users/eignerchris/Development/zipasaurus/log/newrelic_agent.log
+[04/26/13 12:18:12 -0700 Chriss-MacBook-Air.local (52048)] INFO : Dispatcher: sinatra
+[04/26/13 12:18:12 -0700 Chriss-MacBook-Air.local (52048)] INFO : Application: development
+[04/26/13 12:18:12 -0700 Chriss-MacBook-Air.local (52048)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
+[04/26/13 12:18:12 -0700 Chriss-MacBook-Air.local (52048)] INFO : New Relic Ruby Agent 3.3.2.1 Initialized: pid = 52048
+[04/26/13 12:18:12 -0700 Chriss-MacBook-Air.local (52048)] INFO : Agent Log at /Users/eignerchris/Development/zipasaurus/log/newrelic_agent.log
+[04/26/13 12:18:23 -0700 Chriss-MacBook-Air.local (52063)] INFO : Dispatcher: unicorn
+[04/26/13 12:18:23 -0700 Chriss-MacBook-Air.local (52063)] INFO : Application: development
+[04/26/13 12:18:23 -0700 Chriss-MacBook-Air.local (52063)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
+[04/26/13 12:18:23 -0700 Chriss-MacBook-Air.local (52063)] INFO : New Relic Ruby Agent 3.3.2.1 Initialized: pid = 52063
+[04/26/13 12:18:23 -0700 Chriss-MacBook-Air.local (52063)] INFO : Agent Log at /Users/eignerchris/Development/zipasaurus/log/newrelic_agent.log

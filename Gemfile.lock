@@ -44,6 +44,7 @@ GEM
     kgio (2.7.4)
     multi_json (1.6.1)
     multipart-post (1.2.0)
+    newrelic_rpm (3.3.2.1)
     rack (1.5.2)
     rack-jsonp (1.3.1)
       rack
@@ -79,6 +80,7 @@ DEPENDENCIES
   dm-serializer
   dm-timestamps
   dm-types
+  newrelic_rpm
   rack-jsonp
   rake
   sentry-raven

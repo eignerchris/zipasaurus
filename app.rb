@@ -1,4 +1,4 @@
-class Controller < ZipasaurusApp
+class App < ZipasaurusApp
   CACHE_TIME = 7200
 
   before do
