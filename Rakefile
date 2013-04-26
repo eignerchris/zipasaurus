@@ -4,10 +4,10 @@ namespace :db do
   
   desc "load zip code and info into db"
   task :load_zip_info do
-    zip_data = File.read('data/ZIP_CODES.txt').split("\n").map { |line| line.split(",") }
-    zip_data.collect do |blob|
-      z = Zip.new({code: blob[0], lat: blob[1], lng: blob[2], city: blob[3], state: blob[4], county: blob[5] })
-      print '.' if CouchPotato.database.save_document(z)
+    zip_data = File.read('data/US.txt').split("\n").map { |line| line.split("\t") }
+    zip_data.map do |line|
+      z = Zip.new({code: line[1], lat: line[9], lng: line[10], city: line[2], state: line[4], state_full: line[3],county: line[5] })
+      print '.' if z.save
     end
   end
 end

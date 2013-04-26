@@ -1,57 +1,67 @@
 class Controller < ZipasaurusApp
+  CACHE_TIME = 7200
+
+  before do
+    cache_control :public, max_age: CACHE_TIME
+  end
 
   get '/?' do
-    cache_control :public, max_age: CACHE_TIME
     erb :index
   end
 
-  CACHE_TIME = 7200
-
   get '/zip/:code' do
-    cache_control :public, max_age: CACHE_TIME
     content_type 'application/json'
 
-    code   = params[:code]
-    record = CouchPotato.database.view(Zip.by_code(code)).first
+    record = Zip.first(code: params[:code])
     
-    Zip.to_json(record).to_json
+    record.to_json(:exclude => [:id])
   end
 
   get '/state/:state' do
-    cache_control :public, max_age: CACHE_TIME
     content_type 'application/json'
 
-    state   = STATE_ABBREV[params[:state].downcase]
-    return [].to_json unless state
-    records = CouchPotato.database.view(Zip.by_state(state.upcase))
+    if params[:state].length > 2
+      records = Zip.all(state_full: params[:state].capitalize)
+    else
+      records = Zip.all(state: params[:state].upcase)
+    end
     
-    Zip.to_json(records).to_json
+    records.to_json(:exclude => [:id])
   end
 
   get '/state/:state/city/:city' do
-    cache_control :public, max_age: CACHE_TIME
     content_type 'application/json'
 
-    state = STATE_ABBREV[params[:state].downcase]
-    return [].to_json unless state
-    city  = params[:city].upcase
+    if params[:state].length > 2
+      state = params[:state].capitalize
+      city  = params[:city].capitalize
 
-    records = CouchPotato.database.view(Zip.by_state(state.upcase)).select { |r| r['city'] == city }
+      records = Zip.all(state_full: state, city: city)
+    else
+      state = params[:state].upcase
+      city  = params[:city].capitalize
+      records = Zip.all(state: state, city: city)
+    end
 
-    Zip.to_json(records).to_json
+    records.to_json(:exclude => [:id])
   end
 
   get '/state/:state/county/:county' do
-    cache_control :public, max_age: CACHE_TIME
     content_type 'application/json'
     
-    state  = STATE_ABBREV[params[:state].downcase]
-    return [].to_json unless state
-    county = params[:county].upcase
+    if params[:state].length > 2
+      state  = params[:state].capitalize
+      county = params[:county].capitalize
 
-    records = CouchPotato.database.view(Zip.by_state(state.upcase)).select { |r| r['county'] == county }
+      records = Zip.all(state_full: state, county: county)
+    else
+      state  = params[:state].upcase
+      county = params[:county].capitalize
+
+      records = Zip.all(state: state, county: county)
+    end
   
-    Zip.to_json(records).to_json
+    records.to_json
   end
    
 end

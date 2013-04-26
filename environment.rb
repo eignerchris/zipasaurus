@@ -12,11 +12,13 @@ class ZipasaurusApp < Sinatra::Base
 
   configure :development do
     use Rack::ShowExceptions
-    CouchPotato::Config.database_name = "http://localhost:5984/zipasaurus"
+    DataMapper.setup(:default, 'postgres://eignerchris:@localhost/zipasaurus')
+    DataMapper.auto_upgrade!
   end
 
   configure :production do
-    CouchPotato::Config.database_name = "https://eignerchris:thereisnospoon@eignerchris.cloudant.com/zipasaurus"
+    DataMapper.setup(:default, ENV['DATABASE_URL'])
+    DataMapper.auto_upgrade!
   end
   
   use Rack::CommonLogger

@@ -1,33 +1,22 @@
 class Zip
-  include CouchPotato::Persistence
-  
-  property :code,   type: String
-  property :lat,    type: String
-  property :lng,    type: String
-  property :city,   type: String
-  property :state,  type: String
-  property :county, type: String
+  include DataMapper::Resource
 
-  view :by_code, key: :code
-  view :by_state, key: :state
+  property :id,         Serial
+  property :code,       String, key: true
+  property :lat,        String
+  property :lng,        String
+  property :city,       String
+  property :state,      String, key: true
+  property :state_full, String
+  property :county,     String, key: true
 
-  def self.to_json(data)
-    if data.is_a? Array
-      data.map do |r|
-        { code: r['code'],
-          lat: r['lat'],
-          lng: r['lng'],
-          city: r['city'],
-          state: r['state'],
-          county: r['county'] }
-      end
-    elsif data.is_a? Hash
-      { code: data['code'],
-        lat: data['lat'],
-        lng: data['lng'],
-        city: data['city'],
-        state: data['state'],
-        county: data['county'] }
-    end
-  end
+  # def to_json(options={})
+  #   { code: code,
+  #     lat: lat,
+  #     lng: lng,
+  #     city: city,
+  #     state: state,
+  #     state_full: state_full,
+  #     county: county }
+  # end
 end
