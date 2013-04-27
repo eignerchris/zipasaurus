@@ -13,7 +13,7 @@ namespace :db do
 
   desc "update zip info from geonames"
   task :update_zip_info do
-
+    Zip.destroy!
     `curl -o tmp/US.zip "http://download.geonames.org/export/zip/US.zip"`
     `tar -zxvf tmp/US.zip -C tmp`
 
