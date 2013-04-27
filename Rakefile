@@ -17,9 +17,9 @@ namespace :db do
     `cd /tmp && tar zxvf unzip.tar.gz`
     `cp /tmp/unzip610b/unix/Makefile /tmp/unzip610b/`
     `cd /tmp/unzip610b && make generic`
-    `cp /tmp/unzip610b/unzip /tmp`
+    `cp /tmp/unzip610b/unzip /tmp/`
     `curl -o /tmp/US.zip "http://download.geonames.org/export/zip/US.zip"`
-    `./tmp/unzip /tmp/US.zip -d /tmp`
+    `cd /tmp && ./unzip /tmp/US.zip -d /tmp`
 
     Zip.destroy!
     zip_data = File.read('/tmp/US.txt').split("\n").map { |line| line.split("\t") }
