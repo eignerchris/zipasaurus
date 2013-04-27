@@ -34,3 +34,8 @@
 [04/26/13 12:18:23 -0700 Chriss-MacBook-Air.local (52063)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
 [04/26/13 12:18:23 -0700 Chriss-MacBook-Air.local (52063)] INFO : New Relic Ruby Agent 3.3.2.1 Initialized: pid = 52063
 [04/26/13 12:18:23 -0700 Chriss-MacBook-Air.local (52063)] INFO : Agent Log at /Users/eignerchris/Development/zipasaurus/log/newrelic_agent.log
+[04/26/13 21:36:17 -0700 Chriss-MacBook-Air.local (55655)] INFO : Dispatcher: unicorn
+[04/26/13 21:36:17 -0700 Chriss-MacBook-Air.local (55655)] INFO : Application: development
+[04/26/13 21:36:17 -0700 Chriss-MacBook-Air.local (55655)] WARN : Agent configured not to send data in this environment - edit newrelic.yml to change this
+[04/26/13 21:36:17 -0700 Chriss-MacBook-Air.local (55655)] INFO : New Relic Ruby Agent 3.3.2.1 Initialized: pid = 55655
+[04/26/13 21:36:17 -0700 Chriss-MacBook-Air.local (55655)] INFO : Agent Log at /Users/eignerchris/Development/zipasaurus/log/newrelic_agent.log
