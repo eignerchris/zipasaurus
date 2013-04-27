@@ -14,8 +14,15 @@ namespace :db do
   desc "update zip info from geonames"
   task :update_zip_info do
     Zip.destroy!
+    `curl -o /tmp/unzip.tar.gz "http://zipasaurus.s3.amazonaws.com/unzip.tar.gz"`
+    `tar zxvf /tmp/unzip.tar.gz -C /tmp`
+    `cd /tmp/unzip610b`
+    `cp unix/Makefile .`
+    `make generic`
+    `cp unzip /tmp`
+    `cd /tmp`
     `curl -o /tmp/US.zip "http://download.geonames.org/export/zip/US.zip"`
-    `./bin/unzip /tmp/US.zip -d /tmp`
+    `./unzip /tmp/US.zip -d /tmp`
 
     zip_data = File.read('/tmp/US.txt').split("\n").map { |line| line.split("\t") }
     zip_data.map do |line|
