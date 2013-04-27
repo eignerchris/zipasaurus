@@ -15,7 +15,7 @@ namespace :db do
   task :update_zip_info do
     Zip.destroy!
     `curl -o tmp/US.zip "http://download.geonames.org/export/zip/US.zip"`
-    `tar -zxvf tmp/US.zip -C tmp`
+    `unzip tmp/US.zip -d tmp`
 
     zip_data = File.read('tmp/US.txt').split("\n").map { |line| line.split("\t") }
     zip_data.map do |line|
