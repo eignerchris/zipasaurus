@@ -14,3 +14,5 @@ gem 'dm-postgres-adapter'
 gem 'unicorn'
 gem 'sentry-raven'
 gem 'newrelic_rpm'
+gem 'i18n'
+gem 'active_support', :require => ['active_support/lazy_load_hooks', 'active_support/core_ext/string']
