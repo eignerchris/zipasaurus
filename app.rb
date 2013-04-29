@@ -35,6 +35,7 @@ class App < ZipasaurusApp
     if params[:state].length > 2
       state = params[:state].capitalize
       city  = params[:city].titleize.gsub("+", ' ')
+      city  = params[:city].titleize.gsub("%20", ' ')
 
       records = Zip.all(state_full: state, city: city)
     else
@@ -52,6 +53,7 @@ class App < ZipasaurusApp
     if params[:state].length > 2
       state  = params[:state].capitalize
       county = params[:county].titleize.gsub("+", ' ')
+      county  = params[:county].titleize.gsub("%20", ' ')
 
       records = Zip.all(state_full: state, county: county)
     else
