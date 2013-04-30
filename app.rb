@@ -3,6 +3,7 @@ class App < ZipasaurusApp
 
   before do
     cache_control :public, max_age: CACHE_TIME
+    response['Access-Control-Allow-Origin'] = '*'
   end
 
   get '/?' do
