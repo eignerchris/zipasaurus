@@ -1,15 +1,106 @@
-pre {
-  display: inline-block;
+body {
+  font-family: 'Open Sans', sans-serif;
 }
 
-#getting-started .btn{
-  float: right;
+a:hover {
+  color: #53E088;
 }
 
-.footer {
-text-align: center;
-padding: 30px 0;
-margin-top: 70px;
-border-top: 1px solid #e5e5e5;
-background-color: #f5f5f5;
+.u-text-right {
+  text-align: right;
+}
+
+.logo img {
+  width: 50px;
+  vertical-align: middle;
+}
+
+.logo a {
+  font-size: 5rem;
+  color: #333;
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: #53E088;
+}
+
+.u-center {
+  text-align: center;
+}
+
+.hero {
+  margin: 10% 0;
+}
+
+.hero h1 {
+  color: #646464;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 2% auto;
+  color: #646464;
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+nav {
+  vertical-align: middle;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-size: 2rem;
+}
+
+.break {
+  max-width: 50%;
+  margin: 0 auto;
+
+}
+
+input.button.button-primary, .button.button-primary {
+  background-color: #58A0D7;
+  border-color: #58A0D7;
+}
+
+#documentation h2 {
+  margin-top: 10%;
+}
+
+#documentation h3 {
+  text-transform: lowercase;
+  color: #646464;
+}
+
+#documentation pre {
+  font-size: 2.5rem;
+}
+
+#documentation .example {
+  margin: 10% auto;
+}
+
+footer {
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media (max-width: 550px) {
+  .logo img {
+    width: 25px;
+  }
+
+  .logo a {
+    font-size: 3rem;
+  }
+
+  #documentation pre {
+    font-size: 1rem;
+  }
 }

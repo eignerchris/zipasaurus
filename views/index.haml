@@ -1,0 +1,42 @@
+.container
+  .hero
+    .row
+      .twelve.columns.u-center
+        %h1 postal data at your fingertips.
+        %p zipasaur.us exposes a friendly JSON interface for interacting with postal code data. US data only, more counties coming soon.
+        %a.button.button-primary Purchase a License
+
+  .break
+    .row
+      .twelve.columns
+        %hr
+
+  .row
+    #documentation.twelve.columns
+      %h2.u-center documentation
+
+      .example
+        %h3 find a specific postal code
+        %p Great for form validation, or filling in missing data
+        %pre
+          %code
+            curl http://api.zipasaur.us/zip/94105
+
+      .example
+        %h3 find all postal codes in a state
+        %pre
+          %code
+            curl http://api.zipasaur.us/state/or
+
+      .example
+        %h3 find all postal codes in a city
+        %pre
+          %code
+            http://api.zipasaur.us/state/ca/city/san+francisco
+
+      .example
+        %h3 find all postal codes in a county
+        %pre
+          %code
+            curl http://api.zipasaur.us/state/or/county/multnomah
+

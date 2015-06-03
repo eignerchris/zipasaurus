@@ -1,13 +1,12 @@
 class App < ZipasaurusApp
-  CACHE_TIME = 7200
 
   before do
-    cache_control :public, max_age: CACHE_TIME
+    cache_control :public
     response['Access-Control-Allow-Origin'] = '*'
   end
 
   get '/?' do
-    erb :index
+    haml :index
   end
 
   get '/zip/:code' do

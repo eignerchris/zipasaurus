@@ -4,6 +4,7 @@ GEM
     activesupport (3.0.0)
     addressable (2.2.8)
     bcrypt-ruby (3.0.1)
+    coderay (1.0.9)
     data_objects (0.10.12)
       addressable (~> 2.1)
     dm-aggregates (1.2.0)
@@ -39,6 +40,8 @@ GEM
     faraday (0.8.7)
       multipart-post (~> 1.1)
     fastercsv (1.5.5)
+    haml (4.0.6)
+      tilt
     hashie (2.0.4)
     i18n (0.6.1)
     json (1.7.7)
@@ -52,7 +55,7 @@ GEM
     rack-cors (0.2.9)
     rack-protection (1.3.2)
       rack
-    rake (10.0.3)
+    rake (10.4.2)
     sentry-raven (0.4.6)
       faraday (>= 0.7.6)
       hashie
@@ -71,6 +74,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  coderay
   dm-aggregates
   dm-core
   dm-migrations
@@ -78,6 +82,7 @@ DEPENDENCIES
   dm-serializer
   dm-timestamps
   dm-types
+  haml
   i18n
   newrelic_rpm
   puma
