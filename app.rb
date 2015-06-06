@@ -23,7 +23,7 @@ class App < ZipasaurusApp
     if params[:state].length > 2
       records = Zip.all(state_full: params[:state].capitalize)
     else
-      records = Zip.all(state: params[:state].upcase)
+      records = Zip.all(state_abbrev: params[:state].upcase)
     end
     
     records.to_json(:exclude => [:id])
@@ -41,7 +41,7 @@ class App < ZipasaurusApp
     else
       state = params[:state].upcase
       city  = params[:city].titleize.gsub("+", ' ')
-      records = Zip.all(state: state, city: city)
+      records = Zip.all(state_abbrev: state, city: city)
     end
 
     records.to_json(:exclude => [:id])
@@ -60,7 +60,7 @@ class App < ZipasaurusApp
       state  = params[:state].upcase
       county = params[:county].titleize.gsub("+", ' ')
 
-      records = Zip.all(state: state, county: county)
+      records = Zip.all(state_abbrev: state, county: county)
     end
   
     records.to_json
