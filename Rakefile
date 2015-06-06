@@ -20,6 +20,6 @@ namespace :db do
 
   desc "wipe zip code data for reload"
   task :wipe do
-    Zip.destroy_all
+    Zip.destroy
   end
 end

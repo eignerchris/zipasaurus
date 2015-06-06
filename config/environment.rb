@@ -2,6 +2,8 @@ require 'rubygems'
 require 'bundler'
 Bundler.setup
 Bundler.require :default
+require 'dotenv'
+Dotenv.load
 
 class ZipasaurusApp < Sinatra::Base
 
@@ -24,7 +26,7 @@ class ZipasaurusApp < Sinatra::Base
   use Rack::Cors do
     allow do
       origins '*'
-      resource '*', :headers => :any, :methods => :get
+      resource '*', headers: :any, methods: :get
     end
   end
 
@@ -32,6 +34,8 @@ class ZipasaurusApp < Sinatra::Base
   set :root, File.expand_path(File.dirname(__FILE__)).gsub("/config", '')
   set :public_folder, File.join(root, 'static')
   set :dump_errors, true
+  set :stripe_sk, ENV['STRIPE_SK']
+  set :stripe_pk, ENV['STRIPE_PK']
 end
 
 puts "Starting in #{ZipasaurusApp.environment} mode..."
